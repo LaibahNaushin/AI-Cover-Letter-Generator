@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Cover Letter Generator</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    />
+
+    <!-- Remix Icons -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+        rel="stylesheet"
+    />
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+        <header>
+            <h1><i class="ri-ai-generate"></i> AI Cover Letter Generator</h1>
+            <p>Create professional cover letters instantly with AI.</p>
+        </header>
+
+        <!-- Form Section -->
+        <section class="form-section">
+
+            <div class="input-group">
+                <label>Candidate Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your full name"
+                />
+            </div>
+
+            <div class="input-group">
+                <label>Job Role</label>
+                <input
+                    type="text"
+                    id="role"
+                    placeholder="Frontend Developer"
+                />
+            </div>
+
+            <div class="input-group">
+                <label>Target Company</label>
+                <input
+                    type="text"
+                    id="company"
+                    placeholder="Google"
+                />
+            </div>
+
+            <div class="input-group">
+                <label>Key Skills</label>
+                <textarea
+                    id="skills"
+                    rows="4"
+                    placeholder="HTML, CSS, JavaScript, React..."
+                ></textarea>
+            </div>
+
+            <!-- Bonus -->
+            <div class="input-group">
+                <label>Resume (Optional)</label>
+                <input
+                    type="file"
+                    id="resume"
+                    accept=".pdf"
+                />
+            </div>
+
+            <button id="generateBtn">
+                <i class="ri-magic-line"></i>
+                Generate Cover Letter
+            </button>
+
+        </section>
+
+        <!-- Loading -->
+        <div class="loading hidden" id="loading">
+
+            <div class="spinner"></div>
+
+            <p>Generating your cover letter...</p>
+
+        </div>
+
+        <!-- Result -->
+        <section class="result-section">
+
+            <div class="result-header">
+
+                <h2>Generated Cover Letter</h2>
+
+                <button id="copyBtn">
+
+                    <i class="ri-file-copy-line"></i>
+
+                    Copy
+
+                </button>
+
+            </div>
+
+            <div id="output">
+
+                Your generated cover letter will appear here...
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

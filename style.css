@@ -1,0 +1,755 @@
+/* ===========================
+   GOOGLE FONT
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px 20px;
+    background:linear-gradient(135deg,#0f172a,#1e293b,#2563eb);
+    background-size:300% 300%;
+    animation:bgMove 12s ease infinite;
+}
+
+@keyframes bgMove{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+/* ===========================
+   CONTAINER
+=========================== */
+
+.container{
+
+    width:100%;
+    max-width:900px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    border-radius:22px;
+
+    padding:40px;
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.35);
+
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+header{
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+}
+
+header h1{
+
+    color:#fff;
+
+    font-size:2.4rem;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+}
+
+header h1 i{
+
+    color:#60a5fa;
+
+    margin-right:10px;
+
+}
+
+header p{
+
+    color:#dbeafe;
+
+    font-size:15px;
+
+}
+
+/* ===========================
+   FORM
+=========================== */
+
+.form-section{
+
+    display:grid;
+
+    gap:22px;
+
+}
+
+/* ===========================
+   INPUT GROUP
+=========================== */
+
+.input-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.input-group label{
+
+    color:#fff;
+
+    font-weight:600;
+
+    margin-bottom:8px;
+
+}
+
+.input-group input,
+
+.input-group textarea{
+
+    width:100%;
+
+    padding:15px 18px;
+
+    border-radius:12px;
+
+    border:2px solid transparent;
+
+    outline:none;
+
+    font-size:15px;
+
+    transition:.35s;
+
+    background:rgba(255,255,255,.15);
+
+    color:#fff;
+
+}
+
+.input-group input::placeholder,
+
+.input-group textarea::placeholder{
+
+    color:#d1d5db;
+
+}
+
+.input-group textarea{
+
+    resize:vertical;
+
+    min-height:140px;
+
+}
+
+.input-group input:focus,
+
+.input-group textarea:focus{
+
+    border-color:#3b82f6;
+
+    background:rgba(255,255,255,.22);
+
+    box-shadow:
+
+    0 0 0 5px rgba(59,130,246,.15);
+
+}
+
+/* ===========================
+FILE INPUT
+=========================== */
+
+input[type=file]{
+
+    cursor:pointer;
+
+    padding:14px;
+
+}
+
+/* ===========================
+BUTTON
+=========================== */
+
+#generateBtn{
+
+    border:none;
+
+    outline:none;
+
+    cursor:pointer;
+
+    padding:17px;
+
+    border-radius:14px;
+
+    background:linear-gradient(135deg,#2563eb,#3b82f6);
+
+    color:#fff;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+#generateBtn i{
+
+    margin-right:8px;
+
+}
+
+#generateBtn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+
+    0 12px 30px rgba(37,99,235,.45);
+
+}
+
+/* ===========================
+LOADING
+=========================== */
+
+.loading{
+
+    margin-top:35px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:18px;
+
+}
+
+.hidden{
+
+    display:none;
+
+}
+
+.spinner{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    border:5px solid rgba(255,255,255,.3);
+
+    border-top:5px solid #fff;
+
+    animation:spin .8s linear infinite;
+
+}
+
+@keyframes spin{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+.loading p{
+
+    color:#fff;
+
+    font-weight:500;
+
+}
+
+/* ===========================
+RESULT SECTION
+=========================== */
+
+.result-section{
+
+    margin-top:40px;
+
+}
+
+.result-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:18px;
+
+}
+
+.result-header h2{
+
+    color:#fff;
+
+    font-size:22px;
+
+}
+
+#copyBtn{
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:12px 18px;
+
+    border-radius:10px;
+
+    background:#22c55e;
+
+    color:#fff;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+#copyBtn:hover{
+
+    transform:scale(1.05);
+
+}
+/* ==========================================
+   OUTPUT BOX
+========================================== */
+
+#output{
+    background: rgba(255,255,255,0.12);
+    border:1px solid rgba(255,255,255,0.15);
+    border-radius:16px;
+    padding:25px;
+    min-height:260px;
+    color:#f8fafc;
+    line-height:1.9;
+    font-size:15px;
+    white-space:pre-wrap;
+    overflow-wrap:break-word;
+    transition:.3s;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+#output:hover{
+    border-color:#60a5fa;
+    box-shadow:0 15px 35px rgba(37,99,235,.20);
+}
+
+/* ==========================================
+   COPY BUTTON
+========================================== */
+
+#copyBtn{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+#copyBtn:active{
+    transform:scale(.96);
+}
+
+/* ==========================================
+   SUCCESS MESSAGE
+========================================== */
+
+.toast{
+
+    position:fixed;
+
+    top:30px;
+
+    right:30px;
+
+    background:#22c55e;
+
+    color:#fff;
+
+    padding:15px 22px;
+
+    border-radius:12px;
+
+    font-weight:600;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+    animation:slideDown .5s ease;
+
+    z-index:1000;
+
+}
+
+@keyframes slideDown{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(-30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#0f172a;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#3b82f6;
+    border-radius:10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#2563eb;
+}
+
+/* ==========================================
+   INPUT HOVER
+========================================== */
+
+.input-group input:hover,
+.input-group textarea:hover{
+
+    border-color:rgba(255,255,255,.35);
+
+}
+
+/* ==========================================
+   FILE INPUT
+========================================== */
+
+input[type=file]{
+
+    color:#fff;
+
+}
+
+input[type=file]::file-selector-button{
+
+    border:none;
+
+    background:#3b82f6;
+
+    color:#fff;
+
+    padding:10px 18px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    margin-right:15px;
+
+    transition:.3s;
+
+}
+
+input[type=file]::file-selector-button:hover{
+
+    background:#2563eb;
+
+}
+
+/* ==========================================
+   BUTTON CLICK EFFECT
+========================================== */
+
+#generateBtn:active{
+
+    transform:scale(.98);
+
+}
+
+#copyBtn:active{
+
+    transform:scale(.96);
+
+}
+
+/* ==========================================
+   FADE ANIMATION
+========================================== */
+
+.fadeIn{
+
+    animation:fadeIn .5s ease;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:900px){
+
+.container{
+
+padding:30px;
+
+}
+
+header h1{
+
+font-size:2rem;
+
+}
+
+}
+
+@media(max-width:768px){
+
+body{
+
+padding:20px;
+
+}
+
+.container{
+
+padding:22px;
+
+}
+
+.result-header{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:15px;
+
+}
+
+#copyBtn{
+
+width:100%;
+
+justify-content:center;
+
+}
+
+#generateBtn{
+
+width:100%;
+
+}
+
+header h1{
+
+font-size:1.8rem;
+
+}
+
+}
+
+@media(max-width:500px){
+
+header h1{
+
+font-size:1.5rem;
+
+}
+
+header p{
+
+font-size:14px;
+
+}
+
+.input-group input,
+.input-group textarea{
+
+padding:13px;
+
+font-size:14px;
+
+}
+
+#generateBtn{
+
+padding:15px;
+
+font-size:15px;
+
+}
+
+#output{
+
+padding:18px;
+
+font-size:14px;
+
+line-height:1.7;
+
+}
+
+}
+
+/* ==========================================
+   GLASS SHINE EFFECT
+========================================== */
+
+.container{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.container::before{
+
+content:"";
+
+position:absolute;
+
+width:220px;
+
+height:220px;
+
+background:rgba(255,255,255,.08);
+
+border-radius:50%;
+
+top:-80px;
+
+right:-80px;
+
+filter:blur(10px);
+
+}
+
+.container::after{
+
+content:"";
+
+position:absolute;
+
+width:180px;
+
+height:180px;
+
+background:rgba(59,130,246,.12);
+
+border-radius:50%;
+
+bottom:-70px;
+
+left:-70px;
+
+filter:blur(12px);
+
+}
+
+/* ==========================================
+   SELECTION
+========================================== */
+
+::selection{
+
+background:#2563eb;
+
+color:#fff;
+
+}
+
+/* ==========================================
+   END
+========================================== */
